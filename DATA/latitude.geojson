@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "capricorn",
+        "colour": "red"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            -23.43622
+          ],
+          [
+            -180,
+            -23.43622
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "other",
+        "colour": "blue"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            -13.43622
+          ],
+          [
+            -180,
+            -13.43622
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "other",
+        "colour": "blue"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            -33.43622
+          ],
+          [
+            -180,
+            -33.43622
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "other",
+        "colour": "blue"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            -43.43622
+          ],
+          [
+            -180,
+            -43.43622
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "equator",
+        "colour": "blue"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            0
+          ],
+          [
+            -180,
+            0
+          ]
+        ],
+        "type": "LineString"
+      }
+    }
+  ]
+}
