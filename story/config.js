@@ -37,7 +37,7 @@ var config = {
                 },
                 {
                     layer: 'cancer',
-                    opacity: 0
+                    opacity: 1
                 },
                 {
                     layer: 'markers',
