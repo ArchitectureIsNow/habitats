@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "capricorn",
+        "colour": "red"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            -23.43622
+          ],
+          [
+            -180,
+            -23.43622
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "cancer",
+        "colour": "blue"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            180,
+            23.43622
+          ],
+          [
+            -180,
+            23.43622
+          ]
+        ],
+        "type": "LineString"
+      }
+    }
+  ]
+}
