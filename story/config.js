@@ -1,9 +1,9 @@
 var config = {
     accessToken: 'pk.eyJ1IjoiYWJ1cmdlc3MiLCJhIjoiY2tyenRvZjQ4MGEzaDJ1b2Mzb2x0ZzVwcyJ9.DzFFA2Pet7r9njDNpyEkXw',
-    style: 'mapbox://styles/mapbox/light-v11',
+    // style: 'mapbox://styles/mapbox/light-v11',
     // style: 'mapbox://styles/aburgess/clm4s8ca100hy01rffgwgea9v',
-    // style: 'mapbox://styles/mapbox/satellite-v9',
-    // zoom: 10,
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    zoom: 1.8,
     center: [174.287, 0],
     // projection: 'globe',
     theme: 'light',
@@ -26,7 +26,7 @@ var config = {
             description: '<p>Innovation occurs through the creation of new methods and things that improve or enhance. We are interested in how communities leverage local and global technologies in innovative ways to improve wellbeing outcomes.</p><p>The Tropic of Capricorn regions are interesting because of the apparent differences of these communities.</p>',
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -43,10 +43,10 @@ var config = {
                     layer: 'markers',
                     opacity: 0
                 },
-                {
-                    layer: 'solar',
-                    opacity: 0
-                },
+                // {
+                //     layer: 'solar',
+                //     opacity: 0
+                // },
             ],
             onChapterExit: [
 
@@ -58,10 +58,10 @@ var config = {
                     layer: 'cancer',
                     opacity: 1
                 },
-                {
-                    layer: 'solar',
-                    opacity: 0
-                },
+                // {
+                //     layer: 'solar',
+                //     opacity: 0
+                // },
                 {
                     layer: 'markers',
                     opacity: 0
@@ -77,7 +77,7 @@ var config = {
             description: '<p>Communities in the Tropic of Capricorn share some experiences and conditions, and vary greatly in other ways too. Compared to the Tropic of Cancer regions, we are thinking about:<li>Landmass</li><li>Population</li><li>Geopolitical </li><li>Economy</li><li>Climate</li><li>Indigenous ways of knowing and doing</li><li>Environment</li><li>Proximity to Global North</li> </p>',
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -94,10 +94,10 @@ var config = {
                     layer: 'markers',
                     opacity: 0
                 },
-                {
-                    layer: 'solar',
-                    opacity: 1
-                },
+                // {
+                //     layer: 'solar',
+                //     opacity: 0
+                // },
             ],
             onChapterExit: [
 
@@ -113,10 +113,10 @@ var config = {
                     layer: 'markers',
                     opacity: 0
                 },
-                {
-                    layer: 'solar',
-                    opacity: 1
-                },
+                // {
+                //     layer: 'solar',
+                //     opacity: 0
+                // },
             ]
         },
         // {
@@ -129,7 +129,7 @@ var config = {
         //     description: "<p>landmass</p>",
         //     location: {
         //         center: [174.09094, 0],
-        //         zoom: 2,
+        //         zoom: 1.8,
         //         pitch: 0,
         //         bearing: 0
         //     },
@@ -172,7 +172,7 @@ var config = {
         //     description: "<p>population</p>",
         //     location: {
         //         center: [174.09094, 0],
-        //         zoom: 2,
+        //         zoom: 1.8,
         //         pitch: 0,
         //         bearing: 0
         //     },
@@ -214,7 +214,7 @@ var config = {
             description: '<h4>Starting Points</h4><p><li>How are communities leveraging local and global technology and ways of knowing and ways of doing to engage with contemporary issues and opportunities?</li><li>What are the similarities and differences amongst the actions and activities of communities around the Tropic of Capricorn. How might this compare to the Tropic of Cancer?</li><li>How is information and innovation disseminated to, through and from these communities.</li><p><h4>Goals</h4><p><li>Develop a resource from which to expand and grow knowledge within SoFE (and beyond) that centres on this part of the world.</li><li>Building prototype solutions (to help disseminate information and knowledge)</li><li>To explore and develop synergies between researchers in SoFE and wider DCT community.</li></p>',
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -225,16 +225,16 @@ var config = {
                 },
                 {
                     layer: 'cancer',
-                    opacity: 0
+                    opacity: 1
                 },
                 {
                     layer: 'markers',
                     opacity: 0
                 },
-                {
-                    layer: 'solar',
-                    opacity: 1
-                },
+                // {
+                //     layer: 'solar',
+                //     opacity: 0
+                // },
             ],
             onChapterExit: [
 
@@ -244,16 +244,16 @@ var config = {
                 },
                 {
                     layer: 'cancer',
-                    opacity: 0
+                    opacity: 1
                 },
                 {
                     layer: 'markers',
                     opacity: 1
                 },
-                {
-                    layer: 'solar',
-                    opacity: 1
-                },
+                // {
+                //     layer: 'solar',
+                //     opacity: 0
+                // },
             ]
         },
         {
@@ -264,7 +264,7 @@ var config = {
             description: '<p>This project is in its initial stages. We are collecting examples of projects, research, initiatives and policies that utilise technology and local ways of knowing or being in innovative ways. We’ve collected over 70 examples so far, which have then been categorised and mapped.</p><p>Some of the key areas we are looking at are:<li>Project Outputs (innovation)<li> Location and Place (country, region, territorial typology)</li><li>Project Outcomes (the desired change)</li><li>Project Drivers (wider factors creating the need for change)</li><li>Key stakeholders/users</li><li>Key Strategy</li><li>Sector</li><li>Funding</li><li>Materials</li></p>',
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -421,7 +421,7 @@ var config = {
             description: "<p><li>Building Healthy Communities (Local responses to housing needs)</li><li>Solar Energy (Variations in the use and value of solar energy technology)</li><li>Australia Remote Communities (The conflation of multiple wellbeing stressors)</li></p>",
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -462,7 +462,7 @@ var config = {
             description: "Building at the intersection of technology and culture",
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -492,7 +492,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -519,7 +519,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -534,7 +534,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -561,7 +561,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -576,7 +576,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -603,7 +603,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -618,7 +618,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -645,7 +645,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -660,7 +660,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -687,7 +687,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -702,7 +702,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -729,7 +729,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -744,7 +744,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -771,7 +771,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -798,7 +798,7 @@ var config = {
             description: "<p>Solar energy is commonly seen as a strategy to improve energy security in vulnerable communities. Causes of energy insecurity vary across communities and solutions therefore vary too.</p>",
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },
@@ -818,7 +818,7 @@ var config = {
                 {
                     layer: 'solar',
                     opacity: 1
-                }
+                },
             ],
             onChapterExit: [
 
@@ -866,7 +866,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -881,7 +881,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -908,7 +908,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -923,7 +923,7 @@ var config = {
                 },
                 {
                     layer: 'markers',
-                    opacity: 1
+                    opacity: 0
                 }
             ]
         },
@@ -1059,10 +1059,10 @@ var config = {
             title: 'Join Us!',
             // image: 'images/Chapter_4_Image.jpg',
             // imageCredit: '<a href="https://www.nytimes.com/2020/04/09/nyregion/coronavirus-queens-corona-jackson-heights-elmhurst.html">The New York Times</a>',
-            description: "From here we are:<li>looking to expand our team</li><li>Apply for funding (DCT and EU)</li><li>Design solutions</li><li>Disseminate information</li>",
+            description: "From here we are:<li>looking to expand our team</li><li>Apply for funding (DCT and EU)</li><li>Design solutions</li><li>Disseminate information</li><p>Contact: <li>Ann Morrison (ann.morrison@aut.ac.nz)</li><li>Andrew Burgess (andrew.burgess@aut.ac.nz)</li>",
             location: {
                 center: [174.09094, 0],
-                zoom: 2,
+                zoom: 1.8,
                 pitch: 0,
                 bearing: 0
             },

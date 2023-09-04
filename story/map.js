@@ -205,8 +205,8 @@ map.on("load", function () {
                 'blue', 'blue',
                 'black'
             ],
-            'line-width': 1.5,
-            'line-dasharray': [1, 1],
+            'line-width': 3.5,
+            'line-dasharray': [.5, .5],
             'line-opacity': 1
         }
     }, firstSymbolId);
@@ -223,11 +223,11 @@ map.on("load", function () {
             'line-color': [
                 'match', ['get', 'colour'],
                 'red', 'red',
-                'blue', 'blue',
+                'blue', 'yellow',
                 'black'
             ],
-            'line-width': 1.5,
-            'line-dasharray': [1, 1],
+            'line-width': 3.5,
+            'line-dasharray': [.5, .5],
             'line-opacity': 0
         }
     });
@@ -241,7 +241,7 @@ map.on("load", function () {
             'data': 'data/markers.geojson'
         },
         'paint': {
-            // 'line-color': [
+            'circle-color': 'white',
             //     'match', ['get', 'colour'],
             //     'red', 'red',
             //     'blue', 'blue',
@@ -257,6 +257,30 @@ map.on("load", function () {
         }
     });
     
+    // Add the third new layer
+    map.addLayer({
+        'id': 'solar',
+        'type': 'circle',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/solarMarkers.geojson'
+        },
+        'paint': {
+            'circle-color': 'red',
+            //     'match', ['get', 'colour'],
+            //     'red', 'red',
+            //     'blue', 'blue',
+            //     'black'
+            // ],
+            'circle-radius': 5,
+            'circle-opacity': 0
+        },
+        layout: {
+            // 'text-field': ['get', 'Project Name'],
+            // 'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            // 'text-size': 12
+        }
+    });
     // map.addLayer({
     //     'id': 'solar',
     //     'type': 'heatmap',
