@@ -972,8 +972,8 @@ var config = {
         {
             id: 'slide23',
             title: 'Mobile Phone Use',
-            // image: 'images/Chapter_4_Image.jpg',
-            // imageCredit: '<a href="https://www.nytimes.com/2020/04/09/nyregion/coronavirus-queens-corona-jackson-heights-elmhurst.html">The New York Times</a>',
+            image: 'images/Slide_23_Image.jpg',
+            imageCredit: '<a href="https://ntmajorevents.com.au/news/top-territory-musicians-named-among-nima-finalists">NIMA</a>',
             description: "<p>Infrastructures and systems are used in novel ways. There are comparatively high rates of ‘off-line’ utilisation of mobile phone functions, for example, saving and sharing movies on devices for later enjoyment. <small><small>Mobile phone use in Australian indigenous communities: future pathways for HCI4D. Shaw, G. et al.</small></small></p>",
             location: {
                 center: [125.12224, -31.29427],
