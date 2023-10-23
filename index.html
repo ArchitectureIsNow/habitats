@@ -91,128 +91,72 @@
                 'star-intensity': 0.0 // Background star brightness (default 0.35 at low zoooms )
             });
 
+
+
+
+
             // Add Markers
             // Add a new source from our GeoJSON data and
             // set the 'cluster' option to true. GL-JS will
             // add the point_count property to your source data.
             map.addSource('places', {
                 type: 'geojson',
-                // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-                // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-                data: 'DATA/markers.geojson',
-                cluster: true,
-                clusterMaxZoom: 5, // Max zoom to cluster points on
-                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+                data: 'DATA/markers.geojson'
             });
 
             map.addLayer({
-                id: 'clusters',
+                id: 'markers',
                 type: 'circle',
                 source: 'places',
-                filter: ['has', 'point_count'],
+                
                 paint: {
-                    // Use step expressions (https://docs.mapbox.com/style-spec/reference/expressions/#step)
-                    // with three steps to implement three types of circles:
-                    //   * Blue, 20px circles when point count is less than 100
-                    //   * Yellow, 30px circles when point count is between 100 and 750
-                    //   * Pink, 40px circles when point count is greater than or equal to 750
-                    'circle-color': [
-                        'step',
-                        ['get', 'point_count'],
-                        '#51bbd6',
-                        1,
-                        '#f1f075',
-                        5,
-                        '#f28cb1'
-                    ],
-                    'circle-radius': [
-                        'step',
-                        ['get', 'point_count'],
-                        10,
-                        5,
-                        15,
-                        10,
-                        20
-                    ]
+                    'circle-pitch-alignment': 'map',
+                    'circle-radius': 5,
+                    'circle-color': '#ff0000'
                 }
             });
 
             map.addLayer({
-                id: 'cluster-count',
+                id: 'labels-project',
                 type: 'symbol',
                 source: 'places',
-                filter: ['has', 'point_count'],
                 layout: {
-                    'text-field': ['get', 'point_count_abbreviated'],
-                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                    'text-size': 12
+                    'text-anchor': "bottom-left",
+                    'text-justify': 'left',
+                    'text-offset': [0.1,-1.8],
+                    'text-field': ['get', 'Project Name'],
+                    'text-max-width': 30,
+                    'text-size': 14,
+                    'text-line-height': 0.5
+                },
+                paint: {
+                    'text-color': '#000000',
+                    'text-halo-color': '#ffffff',
+                    'text-halo-width': .5
                 }
+                
             });
 
             map.addLayer({
-                id: 'unclustered-point',
-                type: 'circle',
+                id: 'labels-place',
+                type: 'symbol',
                 source: 'places',
-                filter: ['!', ['has', 'point_count']],
+                layout: {
+                    'text-anchor': "top-left",
+                    'text-justify': 'left',
+                    'text-offset': [0.1,-1.6],
+                    'text-field': ['concat', ['get', 'Place'], ', ', ['get', 'Country']],
+                    'text-size': 12,
+                    'text-max-width': 30
+                },
                 paint: {
-                    'circle-color': '#11b4da',
-                    'circle-radius': 4,
-                    'circle-stroke-width': 1,
-                    'circle-stroke-color': '#fff'
+                    'text-color': '#000000',
+                    'text-halo-color': '#ffffff',
+                    'text-halo-width': .5
                 }
+                
             });
-
-            // inspect a cluster on click
-            map.on('click', 'clusters', (e) => {
-                const features = map.queryRenderedFeatures(e.point, {
-                    layers: ['clusters']
-                });
-                const clusterId = features[0].properties.cluster_id;
-                map.getSource('places').getClusterExpansionZoom(
-                    clusterId,
-                    (err, zoom) => {
-                        if (err) return;
-
-                        map.easeTo({
-                            center: features[0].geometry.coordinates,
-                            zoom: zoom
-                        });
-                    }
-                );
-            });
-
-            // When a click event occurs on a feature in
-            // the unclustered-point layer, open a popup at
-            // the location of the feature, with
-            // description HTML from its properties.
-            map.on('click', 'unclustered-point', (e) => {
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                // const mag = e.features[0].properties.mag;
-                // const tsunami =
-                //     e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
-
-                // Ensure that if the map is zoomed out such that
-                // multiple copies of the feature are visible, the
-                // popup appears over the copy being pointed to.
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
-
-                new mapboxgl.Popup()
-                    .setLngLat(coordinates)
-                    .setHTML(
-                        `check`
-                    )
-                    .addTo(map);
-            });
-
-            map.on('mouseenter', 'clusters', () => {
-                map.getCanvas().style.cursor = 'pointer';
-            });
-            map.on('mouseleave', 'clusters', () => {
-                map.getCanvas().style.cursor = '';
-            });
-
+            
 
             // Add Latitude lines
             map.addSource('latitude', {
@@ -232,67 +176,14 @@
                     'line-color': [
                         'match',
                         ['get', 'name'],
-                        'capricorn', '#ff0000',
-                        'other', '#0000ff',
+                        'capricorn', '#0000ff',
+                        'cancer', '#000000',
                         '#000000'
                     ],
-                    'line-width': 0.5
+                    'line-dasharray': [2,2],
+                    'line-width': 2
                 }
             });
-        });
-
-        // After the last frame rendered before the map enters an "idle" state.
-        map.on('idle', () => {
-            // If these two layers were not added to the map, abort
-            if (!map.getLayer('capricorn') || !map.getLayer('clusters', 'unclustered-point', 'cluster-count')) {
-                return;
-            }
-
-            // Enumerate ids of the layers.
-            const toggleableLayerIds = ['capricorn', 'clusters'];
-
-            // Set up the corresponding toggle button for each layer.
-            for (const id of toggleableLayerIds) {
-                // Skip layers that already have a button set up.
-                if (document.getElementById(id)) {
-                    continue;
-                }
-
-                // Create a link.
-                const link = document.createElement('a');
-                link.id = id;
-                link.href = '#';
-                link.textContent = id;
-                link.className = 'active';
-
-                // Show or hide layer when the toggle is clicked.
-                link.onclick = function (e) {
-                    const clickedLayer = this.textContent;
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const visibility = map.getLayoutProperty(
-                        clickedLayer,
-                        'visibility'
-                    );
-
-                    // Toggle layer visibility by changing the layout object's visibility property.
-                    if (visibility === 'visible') {
-                        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                        this.className = '';
-                    } else {
-                        this.className = 'active';
-                        map.setLayoutProperty(
-                            clickedLayer,
-                            'visibility',
-                            'visible'
-                        );
-                    }
-                };
-
-                const layers = document.getElementById('menu');
-                layers.appendChild(link);
-            }
         });
     </script>
 
