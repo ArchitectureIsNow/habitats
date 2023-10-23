@@ -24,78 +24,18 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "other",
-        "colour": "blue"
+        "name": "cancer",
+        "colour": "black"
       },
       "geometry": {
         "coordinates": [
           [
             180,
-            -13.43622
+            23.43622
           ],
           [
             -180,
-            -13.43622
-          ]
-        ],
-        "type": "LineString"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "other",
-        "colour": "blue"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            180,
-            -33.43622
-          ],
-          [
-            -180,
-            -33.43622
-          ]
-        ],
-        "type": "LineString"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "other",
-        "colour": "blue"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            180,
-            -43.43622
-          ],
-          [
-            -180,
-            -43.43622
-          ]
-        ],
-        "type": "LineString"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "equator",
-        "colour": "blue"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            180,
-            0
-          ],
-          [
-            -180,
-            0
+            23.43622
           ]
         ],
         "type": "LineString"
